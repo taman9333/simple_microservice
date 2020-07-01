@@ -16,4 +16,4 @@ app.post("/events", (req, res) => {
   res.send({ status: "ok" });
 });
 
-app.listen("3000", () => "Event-Bus started, listening on port 3000...");
+app.listen("9000", () => "Event-Bus started, listening on port 9000...");
