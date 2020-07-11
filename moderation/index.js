@@ -12,7 +12,7 @@ app.post("/events", async (req, res) => {
     const status = data.content.includes("profanity") ? "rejected" : "approved";
     data["status"] = status;
 
-    await axios.post("http://localhost:9000/events", {
+    await axios.post("http://event-bus-svc:9000/events", {
       type: "CommentModerated",
       data,
     });

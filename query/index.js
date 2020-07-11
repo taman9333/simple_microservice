@@ -26,7 +26,7 @@ app.listen("4002", async () => {
   console.log("Query service, listening on port 4002...");
 
   // syncing and geting all events in case query service is down because of any failure
-  const res = await axios.get("http://localhost:9000/events");
+  const res = await axios.get("http://event-bus-svc:9000/events");
 
   for (const event of res.data) {
     console.log("Processing event: ", event.type);

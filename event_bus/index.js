@@ -13,10 +13,10 @@ app.post("/events", (req, res) => {
   events.push(event);
 
   // we need to handle failure if any of these services is down
-  axios.post("http://localhost:4000/events", event);
-  axios.post("http://localhost:4001/events", event);
-  axios.post("http://localhost:4002/events", event);
-  axios.post("http://localhost:4003/events", event);
+  axios.post("http://posts-clusterip-svc:4000/events", event);
+  axios.post("http://comments-svc:4001/events", event);
+  axios.post("http://query-svc:4002/events", event);
+  axios.post("http://moderation-svc:4003/events", event);
 
   res.send({ status: "ok" });
 });
