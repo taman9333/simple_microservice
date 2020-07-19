@@ -6,9 +6,10 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - http:
-      paths:
-      - path: /posts
-        backend:
-          serviceName: posts-clusterip-svc
-          servicePort: 4000
+    - host: taman.me
+      http:
+        paths:
+        - path: /posts
+          backend:
+            serviceName: posts-clusterip-svc
+            servicePort: 4000
